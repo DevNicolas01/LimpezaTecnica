@@ -11,7 +11,7 @@ export default function ServicePageContent({ service }) {
 
   return (
     <>
-      <section className="bg-gradient-to-br from-navy via-blue to-navy text-white pt-32 pb-20 md:pt-44">
+      <section className="bg-gradient-to-br from-navy via-brand to-navy text-white pt-32 pb-20 md:pt-44">
         <div className="container-limpa">
           <Link
             to="/"
@@ -23,7 +23,7 @@ export default function ServicePageContent({ service }) {
           <div className="w-16 h-16 rounded-xl bg-white/10 flex items-center justify-center mb-6">
             <Icon size={30} />
           </div>
-          <h1 className="text-4xl sm:text-5xl font-black leading-tight max-w-3xl mb-4">{title}</h1>
+          <h1 className="text-4xl sm:text-5xl font-extrabold leading-tight max-w-3xl mb-4">{title}</h1>
           <p className="text-lg text-white/85 max-w-2xl">{shortDescription}</p>
         </div>
       </section>
@@ -56,7 +56,7 @@ export default function ServicePageContent({ service }) {
             <ul className="space-y-3">
               {benefits.map((benefit) => (
                 <li key={benefit} className="flex items-start gap-3">
-                  <CheckCircle2 size={20} className="text-check shrink-0 mt-0.5" />
+                  <CheckCircle2 size={20} className="text-action shrink-0 mt-0.5" />
                   <span className="text-gray-700">{benefit}</span>
                 </li>
               ))}
@@ -67,7 +67,7 @@ export default function ServicePageContent({ service }) {
 
       <section className="py-20 bg-navy text-white text-center">
         <div className="container-limpa flex flex-col items-center">
-          <h2 className="text-3xl sm:text-4xl font-black leading-tight max-w-2xl mb-4">
+          <h2 className="text-3xl sm:text-4xl font-extrabold leading-tight max-w-2xl mb-4">
             Pronto para transformar o seu espaço?
           </h2>
           <p className="text-white/80 max-w-xl mb-8">

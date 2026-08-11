@@ -39,7 +39,7 @@ export default function Contato() {
           className="text-center max-w-2xl mx-auto mb-16"
         >
           <SectionBadge>Contato</SectionBadge>
-          <h1 className="text-3xl sm:text-4xl font-black text-navy leading-tight mb-4">
+          <h1 className="text-3xl sm:text-4xl font-extrabold text-navy leading-tight mb-4">
             Vamos conversar sobre o seu projeto
           </h1>
           <p className="text-gray-600">
@@ -69,7 +69,7 @@ export default function Contato() {
                 value={form.name}
                 onChange={handleChange}
                 placeholder="Seu nome completo"
-                className="w-full rounded-lg border border-gray-200 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue bg-white"
+                className="w-full rounded-lg border border-gray-200 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand bg-white"
               />
             </div>
 
@@ -86,7 +86,7 @@ export default function Contato() {
                   value={form.phone}
                   onChange={handleChange}
                   placeholder="(XX) XXXXX-XXXX"
-                  className="w-full rounded-lg border border-gray-200 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue bg-white"
+                  className="w-full rounded-lg border border-gray-200 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand bg-white"
                 />
               </div>
               <div>
@@ -101,7 +101,7 @@ export default function Contato() {
                   value={form.email}
                   onChange={handleChange}
                   placeholder="seu@email.com"
-                  className="w-full rounded-lg border border-gray-200 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue bg-white"
+                  className="w-full rounded-lg border border-gray-200 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand bg-white"
                 />
               </div>
             </div>
@@ -116,7 +116,7 @@ export default function Contato() {
                 required
                 value={form.service}
                 onChange={handleChange}
-                className="w-full rounded-lg border border-gray-200 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue bg-white"
+                className="w-full rounded-lg border border-gray-200 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand bg-white"
               >
                 <option value="" disabled>
                   Selecione um serviço
@@ -142,7 +142,7 @@ export default function Contato() {
                 value={form.message}
                 onChange={handleChange}
                 placeholder="Conte um pouco sobre o que você precisa..."
-                className="w-full rounded-lg border border-gray-200 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue bg-white resize-none"
+                className="w-full rounded-lg border border-gray-200 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand bg-white resize-none"
               />
             </div>
 
@@ -184,7 +184,8 @@ export default function Contato() {
                 <Clock size={22} className="shrink-0 mt-1" />
                 <div>
                   <p className="font-bold">Horário de Atendimento</p>
-                  <p className="text-white/75 text-sm">{CONTACT.hours}</p>
+                  <p className="text-white/75 text-sm">Seg-Sáb: {CONTACT.hours.weekdays}</p>
+                  <p className="text-white/75 text-sm">Dom: {CONTACT.hours.sunday}</p>
                 </div>
               </div>
             </div>

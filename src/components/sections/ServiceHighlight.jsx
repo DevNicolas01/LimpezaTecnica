@@ -1,75 +1,68 @@
 import { motion } from 'framer-motion'
-import { CheckCircle2, ArrowRight } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 import SectionBadge from '../ui/SectionBadge'
-import ImagePlaceholder from '../ui/ImagePlaceholder'
+import StackedPhotos from '../ui/StackedPhotos'
 import Button from '../ui/Button'
+import PhoneButton from '../ui/PhoneButton'
 import { WHATSAPP_LINK } from '../../data/constants'
 
 export default function ServiceHighlight({
   badge,
   title,
-  description,
-  bullets = [],
-  imagePosition = 'right',
-  imageLabel,
-  image,
-  ctaTo,
+  subtitle,
+  paragraph,
+  flip = false,
+  photoFlip = flip,
+  offset = 'translate-x-4 translate-y-4',
+  showOrange = false,
+  showWatermark = true,
+  watermarkSide = 'left',
 }) {
-  const imageOrderClass = imagePosition === 'left' ? 'lg:order-1' : 'lg:order-2'
-  const textOrderClass = imagePosition === 'left' ? 'lg:order-2' : 'lg:order-1'
-  const dotPosition = imagePosition === 'left' ? '-right-6 -bottom-6' : '-left-6 -bottom-6'
+  const textOrder = flip ? 'lg:order-2' : 'lg:order-1'
+  const photoOrder = flip ? 'lg:order-1' : 'lg:order-2'
 
   return (
-    <section className="py-24 bg-white overflow-hidden">
-      <div className="container-limpa grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
+    <section className="relative py-24 bg-white overflow-hidden">
+      <div
+        className={`absolute top-1/4 ${
+          watermarkSide === 'left' ? '-left-20' : '-right-20'
+        } w-72 h-72 rounded-full bg-brand/10 pointer-events-none`}
+      />
+      {showWatermark && (
+        <span
+          className={`absolute bottom-8 ${
+            watermarkSide === 'left' ? 'left-8' : 'right-8'
+          } font-extrabold text-navy/[0.04] text-5xl leading-none select-none pointer-events-none`}
+        >
+          LIMPEZA TÉCNICA
+        </span>
+      )}
+
+      <div className="container-limpa grid grid-cols-1 lg:grid-cols-2 gap-14 items-center relative">
         <motion.div
-          initial={{ opacity: 0, x: imagePosition === 'left' ? 30 : -30 }}
+          initial={{ opacity: 0, x: flip ? 30 : -30 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6 }}
-          className={textOrderClass}
+          className={textOrder}
         >
           <SectionBadge>{badge}</SectionBadge>
-          <h2 className="text-3xl sm:text-4xl font-black text-navy leading-tight mb-6">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-navy leading-tight mb-4">
             {title}
           </h2>
-          <p className="text-gray-600 leading-relaxed mb-6">{description}</p>
-
-          {bullets.length > 0 && (
-            <ul className="space-y-3 mb-8">
-              {bullets.map((bullet) => (
-                <li key={bullet} className="flex items-start gap-3">
-                  <CheckCircle2 size={20} className="text-check shrink-0 mt-0.5" />
-                  <span className="text-gray-700">{bullet}</span>
-                </li>
-              ))}
-            </ul>
-          )}
-
-          <div className="flex flex-col sm:flex-row gap-4">
+          {subtitle && <p className="text-lg font-bold text-brand mb-4">{subtitle}</p>}
+          <p className="text-gray-600 leading-relaxed mb-8">{paragraph}</p>
+          <div className="flex flex-col sm:flex-row sm:items-center gap-6">
             <Button href={WHATSAPP_LINK} variant="action" icon={ArrowRight} className="flex-row-reverse">
-              Solicitar Orçamento
+              Solicitar Orçamento Gratuito
             </Button>
-            {ctaTo && (
-              <Button to={ctaTo} variant="primary">
-                Saiba Mais
-              </Button>
-            )}
+            <PhoneButton />
           </div>
         </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, x: imagePosition === 'left' ? -30 : 30 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.6 }}
-          className={`relative ${imageOrderClass}`}
-        >
-          <div
-            className={`hidden sm:block absolute w-40 h-40 bg-dot-pattern bg-dots ${dotPosition} -z-10`}
-          />
-          <ImagePlaceholder label={imageLabel} src={image} alt={title} height="h-[24rem]" />
-        </motion.div>
+        <div className={photoOrder}>
+          <StackedPhotos flip={photoFlip} offset={offset} showOrange={showOrange} />
+        </div>
       </div>
     </section>
   )

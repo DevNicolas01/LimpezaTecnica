@@ -2,76 +2,59 @@ import Hero from '../components/sections/Hero'
 import Intro from '../components/sections/Intro'
 import Services from '../components/sections/Services'
 import ServiceHighlight from '../components/sections/ServiceHighlight'
+import CTABanner from '../components/sections/CTABanner'
 import Testimonials from '../components/sections/Testimonials'
 import WhyUs from '../components/sections/WhyUs'
 import NextSteps from '../components/sections/NextSteps'
 import ServiceArea from '../components/sections/ServiceArea'
-import { getServiceBySlug } from '../data/services'
+import Portfolio from '../components/sections/Portfolio'
 
 export default function Home() {
-  const fachadas = getServiceBySlug('limpeza-fachadas')
-  const coberturas = getServiceBySlug('lavagem-coberturas')
-  const vidros = getServiceBySlug('limpeza-vidros')
-  const vistoria = getServiceBySlug('hidrolavagem')
-
   return (
     <>
       <Hero />
       <Intro />
       <Services />
 
+      {/* Destaque Serviço 1 */}
       <ServiceHighlight
-        badge="✦ ESPECIALISTAS EM PÓS-OBRA"
-        title="Obra entregue com atraso? Nós resolvemos."
-        description="Sabemos que atraso na limpeza pode comprometer a entrega da obra e prejudicar contratos. A Limpeza Técnica LTD garante equipe disponível, prazo cumprido e resultado aprovado em vistoria. Atendemos chamados emergenciais para construtoras e incorporadoras em todo o RS."
-        bullets={[
-          'Remoção de respingos de tinta e resíduos de acabamento',
-          'Limpeza de vidros, esquadrias e superfícies envidraçadas',
-          'Equipe com EPI completo e produtos certificados',
-          'Laudo fotográfico antes e depois disponível',
-        ]}
-        imagePosition="right"
-        imageLabel="[ Foto: Limpeza Técnica em Ação ]"
-        image="https://images.unsplash.com/photo-1585421514738-01798e348b17?w=800&q=80"
-        ctaTo={`/servicos/${fachadas.slug}`}
+        badge="✦ Especialistas Nº1 em Limpeza Pós-Obra"
+        title="Prazo cumprido, resultado aprovado em vistoria"
+        paragraph="Sabemos que atraso na limpeza pode comprometer a entrega da obra e prejudicar contratos com a construtora — por isso a Limpeza Técnica LTD garante equipe disponível, prazo cumprido e resultado aprovado em vistoria, removendo respingos de tinta, manchas de cimento e resíduos de construção em todas as superfícies do imóvel antes da entrega ao cliente final."
+        flip={false}
+        offset="translate-x-4 translate-y-4"
+        watermarkSide="left"
       />
 
+      {/* Destaque Serviço 2 (espelhado) */}
       <ServiceHighlight
-        badge="✦ QUALIDADE COMPROVADA"
-        title="20 anos entregando obras limpas no RS"
-        description="Engenheiros e arquitetos que já trabalharam conosco sabem: a Limpeza Técnica LTD entrega padrão técnico superior. Removemos até as manchas mais difíceis — cimento, selante, tinta — sem danificar revestimentos, vidros ou esquadrias."
-        bullets={[
-          'Experiência em obras residenciais, comerciais e industriais',
-          'Produtos adequados a cada tipo de revestimento e material',
-          'Capacidade de atender grandes volumes com prazo garantido',
-          'Referências disponíveis para construtoras parceiras',
-        ]}
-        imagePosition="left"
-        imageLabel="[ Foto: Equipe de Limpeza ]"
-        image="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=800&q=80"
-        ctaTo={`/servicos/${vidros.slug}`}
+        badge="✦ Qualidade Comprovada no RS"
+        title="Anos entregando obras limpas no Rio Grande do Sul"
+        paragraph="Engenheiros e arquitetos que já trabalharam com a gente sabem: a Limpeza Técnica LTD entrega padrão técnico superior, removendo até as manchas mais difíceis — cimento, selante, tinta — sem danificar revestimentos, vidros ou esquadrias, com produtos adequados a cada tipo de material e capacidade para atender grandes volumes dentro do prazo combinado com a construtora."
+        flip={true}
+        offset="-translate-x-4 translate-y-4"
+        watermarkSide="right"
       />
 
+      {/* Equipe em Ação (AIDA) */}
       <ServiceHighlight
-        badge="✦ PRONTOS PARA VISTORIA"
-        title="Imóvel aprovado na vistoria ou a gente volta"
-        description="Garantimos que o imóvel ficará em condições perfeitas para a vistoria e entrega ao cliente final. Caso algum ponto seja reprovado por falha nossa, voltamos sem custo adicional."
-        bullets={[
-          'Checklist completo de limpeza pós-obra',
-          'Garantia de retorno em caso de reprovação',
-          'Atendimento a incorporadoras, loteadoras e construtoras',
-          'Contratos de manutenção pós-entrega disponíveis',
-        ]}
-        imagePosition="right"
-        imageLabel="[ Foto: Resultado Pronto para Entrega ]"
-        image="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80"
-        ctaTo={`/servicos/${vistoria.slug}`}
+        badge="✦ Profissionais Nº1 em Limpeza Pós-Obra"
+        title="Uma equipe pronta para o dia da entrega"
+        subtitle="Treinada, certificada e equipada para qualquer desafio pós-obra."
+        paragraph="Cada profissional da nossa equipe atua com EPI completo, produtos certificados e um checklist técnico desenvolvido ao longo de anos de atendimento a construtoras e incorporadoras no RS — para que, no dia da vistoria, você só precise se preocupar em entregar as chaves. Fale agora com a gente e garanta a data da sua obra na nossa agenda."
+        flip={true}
+        photoFlip={false}
+        offset="-translate-x-3 translate-y-3"
+        showOrange
+        showWatermark={false}
       />
 
-      <WhyUs />
+      <CTABanner />
       <Testimonials />
+      <WhyUs />
       <NextSteps />
       <ServiceArea />
+      <Portfolio />
     </>
   )
 }

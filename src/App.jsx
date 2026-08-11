@@ -5,6 +5,7 @@ import Footer from './components/layout/Footer'
 import WhatsAppButton from './components/layout/WhatsAppButton'
 import Home from './pages/Home'
 import Contato from './pages/Contato'
+import AreaCidade from './pages/AreaCidade'
 import LimpezaFachadas from './pages/services/LimpezaFachadas'
 import LavagemCoberturas from './pages/services/LavagemCoberturas'
 import LimpezaVidros from './pages/services/LimpezaVidros'
@@ -34,6 +35,7 @@ export default function App() {
           <Route path="/servicos/limpeza-vidros" element={<LimpezaVidros />} />
           <Route path="/servicos/hidrolavagem" element={<Hidrolavagem />} />
           <Route path="/contato" element={<Contato />} />
+          <Route path="/area/:cidade" element={<AreaCidade />} />
         </Routes>
       </main>
       <Footer />

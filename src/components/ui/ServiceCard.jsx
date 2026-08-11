@@ -1,28 +1,41 @@
 import { motion } from 'framer-motion'
-import { ArrowRight } from 'lucide-react'
 import { Link } from 'react-router-dom'
+import { ArrowRight } from 'lucide-react'
 
-export default function ServiceCard({ icon: Icon, title, shortDescription, slug, index = 0 }) {
+export default function ServiceCard({ title, slug, index = 0 }) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.3 }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
-      whileHover={{ y: -8 }}
-      className="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-shadow duration-300 border border-gray-100 flex flex-col"
+      className="group relative shrink-0 w-[260px] sm:w-[280px] h-[380px] rounded-2xl overflow-hidden shadow-xl"
     >
-      <div className="w-20 h-20 rounded-full bg-badge-bg flex items-center justify-center mb-6">
-        <Icon className="text-action" size={48} strokeWidth={1.75} />
+      {/* Estado normal: foto ANTES (placeholder) */}
+      <div className="absolute inset-0 bg-gradient-to-br from-navy to-navy-light flex items-center justify-center transition-opacity duration-500 group-hover:opacity-0">
+        <span className="text-white/40 font-bold text-xs uppercase tracking-widest">
+          [ Foto: Antes ]
+        </span>
       </div>
-      <h3 className="text-xl font-bold text-navy mb-3">{title}</h3>
-      <p className="text-gray-600 leading-relaxed mb-6 flex-1">{shortDescription}</p>
-      <Link
-        to={`/servicos/${slug}`}
-        className="inline-flex items-center gap-2 font-bold text-action hover:text-action-dark hover:gap-3 transition-all duration-200"
-      >
-        Saiba mais <ArrowRight size={18} />
-      </Link>
+
+      {/* Estado hover: fade para foto DEPOIS (placeholder) */}
+      <div className="absolute inset-0 bg-gradient-to-br from-brand to-brand-dark flex items-center justify-center opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+        <span className="text-white/50 font-bold text-xs uppercase tracking-widest">
+          [ Foto: Depois ]
+        </span>
+      </div>
+
+      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
+
+      <div className="absolute inset-x-0 bottom-0 p-5 flex flex-col items-start gap-3">
+        <h3 className="text-lg font-extrabold text-white leading-tight">{title}</h3>
+        <Link
+          to={`/servicos/${slug}`}
+          className="inline-flex items-center gap-1.5 bg-brand hover:bg-brand-dark text-white text-sm font-bold px-4 py-2 rounded-md transition-colors"
+        >
+          Saber Mais <ArrowRight size={15} />
+        </Link>
+      </div>
     </motion.div>
   )
 }

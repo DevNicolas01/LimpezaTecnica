@@ -1,29 +1,47 @@
-import { motion } from 'framer-motion'
-import SectionBadge from '../ui/SectionBadge'
+import { ArrowRight } from 'lucide-react'
 import ServiceCard from '../ui/ServiceCard'
+import Button from '../ui/Button'
+import PhoneButton from '../ui/PhoneButton'
 import { services } from '../../data/services'
+import { WHATSAPP_LINK } from '../../data/constants'
+
+const PANEL_IMAGE = 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=800&q=80'
 
 export default function Services() {
   return (
-    <section id="servicos" className="py-24 bg-gray-light">
-      <div className="container-limpa">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.5 }}
-          className="text-center max-w-2xl mx-auto mb-16"
+    <section id="servicos" className="w-full">
+      <div className="flex flex-col lg:flex-row items-stretch">
+        <div
+          className="relative lg:w-[32%] shrink-0 bg-brand px-8 py-14 lg:py-20 flex flex-col justify-center bg-cover bg-center overflow-hidden"
+          style={{ backgroundImage: `url(${PANEL_IMAGE})` }}
         >
-          <SectionBadge>✦ Nossos Serviços</SectionBadge>
-          <h2 className="text-3xl sm:text-4xl font-black text-navy leading-tight">
-            Soluções completas em limpeza técnica
-          </h2>
-        </motion.div>
+          <div className="absolute inset-0 bg-brand/85" />
+          <span className="absolute bottom-6 left-8 font-extrabold text-white/10 text-5xl leading-none select-none pointer-events-none">
+            LIMPEZA TÉCNICA
+          </span>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {services.map((service, index) => (
-            <ServiceCard key={service.slug} index={index} {...service} />
-          ))}
+          <div className="relative">
+            <span className="italic font-extrabold uppercase text-sm tracking-wider text-white/80 mb-4 block">
+              ✦ O Que Fazemos
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-white leading-tight mb-8">
+              Serviços de Limpeza Pós-Obra
+            </h2>
+            <div className="flex flex-col gap-5 items-start">
+              <Button href={WHATSAPP_LINK} variant="action" icon={ArrowRight} className="flex-row-reverse">
+                Solicitar Orçamento Gratuito
+              </Button>
+              <PhoneButton className="text-white" iconClassName="text-white" />
+            </div>
+          </div>
+        </div>
+
+        <div className="flex-1 overflow-x-auto no-scrollbar">
+          <div className="flex gap-5 px-6 py-10 lg:pl-0 lg:-ml-10 lg:pr-10 lg:py-14 relative z-10">
+            {services.map((service, index) => (
+              <ServiceCard key={service.slug} index={index} {...service} />
+            ))}
+          </div>
         </div>
       </div>
     </section>

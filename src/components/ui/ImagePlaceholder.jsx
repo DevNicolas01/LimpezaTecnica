@@ -11,10 +11,10 @@ export default function ImagePlaceholder({ label = '[ Foto ]', height = 'h-80', 
 
   return (
     <div
-      className={`w-full ${height} rounded-2xl bg-gradient-to-br from-blue/10 to-blue/20 border-2 border-dashed border-blue/30 flex flex-col items-center justify-center gap-3 ${className}`}
+      className={`w-full ${height} rounded-2xl bg-gradient-to-br from-brand/10 to-brand/20 border-2 border-dashed border-brand/30 flex flex-col items-center justify-center gap-3 ${className}`}
     >
-      <Building2 className="text-blue/50" size={56} strokeWidth={1.5} />
-      <span className="text-blue/60 font-semibold text-sm text-center px-4">{label}</span>
+      <Building2 className="text-brand/50" size={56} strokeWidth={1.5} />
+      <span className="text-brand/60 font-semibold text-sm text-center px-4">{label}</span>
     </div>
   )
 }

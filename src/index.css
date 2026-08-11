@@ -15,4 +15,37 @@ body {
   .container-limpa {
     @apply max-w-7xl mx-auto px-6 lg:px-10;
   }
+
+  .no-scrollbar {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@keyframes wave-move {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-wave-slow {
+  animation: wave-move 16s linear infinite;
+}
+
+.animate-wave-fast {
+  animation: wave-move 10s linear infinite reverse;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-wave-slow,
+  .animate-wave-fast {
+    animation: none;
+  }
 }

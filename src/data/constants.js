@@ -5,27 +5,20 @@ export const CONTACT = {
   email: 'contato@limpezatecnica.com.br',
   // TODO: Substituir pelo endereço real da Limpeza Técnica LTD.
   address: 'Rio Grande do Sul, Brasil',
-  hours: 'Seg-Sex: 7h às 18h | Sáb: 7h às 12h',
+  // TODO: Substituir pelo Instagram real do cliente.
+  instagram: 'https://instagram.com/limpezatecnica',
+  hours: {
+    weekdays: '8h00 - 17h00',
+    sunday: 'Fechado',
+  },
 }
 
-export const SERVICE_CITIES = [
-  'Porto Alegre',
-  'Caxias do Sul',
-  'Novo Hamburgo',
-  'São Leopoldo',
-  'Canoas',
-  'Gravataí',
-  'Viamão',
-  'Alvorada',
-  'Cachoeirinha',
-  'Esteio',
-  'Sapucaia do Sul',
-  'Pelotas',
-  'Santa Maria',
-  'Passo Fundo',
-]
+export const SERVICE_CITIES = ['Porto Alegre', 'Caxias do Sul', 'Novo Hamburgo', 'São Leopoldo']
 
-export const MAPS_EMBED_SRC =
-  'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3559234!2d-51.2177!3d-30.0346!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95196f85acb331db%3A0xa4dc6f3e2ccd7afd!2sPorto%20Alegre%2C%20RS!5e0!3m2!1spt-BR!2sbr!4v1700000000000'
+// Mapa centralizado no Rio Grande do Sul, zoom 7.
+// OBS: o formato de embed sem chave de API do Google sempre inclui um marcador central
+// (o formato "sem marcador" via URL @lat,lng é bloqueado por X-Frame-Options em iframe).
+// Pinos personalizados por cidade exigiriam a Maps JavaScript API com chave/billing do cliente.
+export const MAPS_EMBED_SRC = 'https://www.google.com/maps?q=-29.75,-53.15&z=7&output=embed'
 
 export const WHATSAPP_LINK = `https://wa.me/${CONTACT.whatsapp}`

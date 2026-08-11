@@ -7,9 +7,9 @@ import { CONTACT, WHATSAPP_LINK } from '../../data/constants'
 import logo from '../../assets/logo.png'
 
 const NAV_LINKS = [
-  { label: 'Serviços', href: '/#servicos' },
   { label: 'Por Que Nós', href: '/#por-que-nos' },
-  { label: 'Depoimentos', href: '/#depoimentos' },
+  { label: 'Como Funciona', href: '/#como-funciona' },
+  { label: 'Portfólio', href: '/#portfolio' },
   { label: 'Área de Atendimento', href: '/#atendimento' },
   { label: 'Contato', href: '/contato' },
 ]
@@ -39,43 +39,58 @@ export default function Header() {
         scrolled ? 'shadow-lg' : 'shadow-none'
       }`}
     >
-      {/* Top bar */}
-      <div className="hidden md:block bg-white border-b border-gray-100">
-        <div className="container-limpa h-[46px] flex items-center justify-between text-sm">
-          <span className="italic font-semibold text-navy/70">
-            Limpeza Pós-Obra com 20 Anos de Experiência
-          </span>
-          <a
-            href={`tel:${CONTACT.phone.replace(/\D/g, '')}`}
-            className="flex items-center gap-2 text-navy hover:text-blue transition-colors"
-          >
-            <Headset size={18} className="text-action" />
-            <span className="font-medium">Fale Conosco:</span>
-            <span className="font-extrabold text-base">{CONTACT.phone}</span>
-          </a>
-        </div>
-      </div>
-
-      {/* Nav bar */}
-      <div className="bg-navy">
-        <div className="container-limpa flex items-center justify-between h-20">
-          {/* TODO: Logo já em src/assets/logo.png — ajustar dimensões caso necessário */}
+      {/* Faixa superior branca */}
+      <div className="hidden md:block bg-white">
+        <div className="container-limpa h-[70px] grid grid-cols-3 items-center">
           <Link to="/" className="flex items-center gap-3">
-            <img src={logo} alt="Limpeza Técnica" className="h-11 w-11 object-contain rounded-lg bg-white p-1" />
-            <span className="font-extrabold text-lg text-white leading-tight">
+            <img src={logo} alt="Limpeza Técnica" className="h-[60px] w-[60px] object-contain rounded-lg" />
+            <span className="font-extrabold text-lg text-navy leading-tight">
               Limpeza
               <br />
               Técnica
             </span>
           </Link>
 
-          <nav className="hidden lg:flex items-center gap-7">
+          <span className="justify-self-center italic font-bold text-navy text-sm lg:text-base text-center">
+            Limpeza Pós-Obra Especializada
+          </span>
+
+          <div className="justify-self-end flex items-center gap-6">
+            <a
+              href={`tel:${CONTACT.phone.replace(/\D/g, '')}`}
+              className="hidden lg:flex items-center gap-2 text-navy hover:text-brand transition-colors"
+            >
+              <Headset size={20} className="text-action" />
+              <span className="font-medium text-sm">Fale Conosco</span>
+              <span className="font-extrabold">{CONTACT.phone}</span>
+            </a>
+            <a
+              href={WHATSAPP_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-action hover:bg-action-dark text-white font-extrabold uppercase text-xs tracking-wider px-6 py-3 rounded-md transition-colors"
+            >
+              Solicitar Orçamento <ArrowRight size={14} />
+            </a>
+          </div>
+        </div>
+      </div>
+
+      {/* Faixa inferior azul */}
+      <div className="bg-brand">
+        <div className="container-limpa flex items-center justify-between lg:justify-center h-16 relative">
+          <Link to="/" className="md:hidden flex items-center gap-2">
+            <img src={logo} alt="Limpeza Técnica" className="h-10 w-10 object-contain rounded-lg bg-white p-1" />
+            <span className="font-extrabold text-white text-sm">Limpeza Técnica</span>
+          </Link>
+
+          <nav className="hidden lg:flex items-center gap-8">
             <div
               className="relative"
               onMouseEnter={() => setServicesOpen(true)}
               onMouseLeave={() => setServicesOpen(false)}
             >
-              <button className="flex items-center gap-1 font-bold uppercase text-xs tracking-wider text-white hover:text-blue-light transition-colors">
+              <button className="flex items-center gap-1 font-bold uppercase text-xs tracking-wider text-white hover:text-white/80 transition-colors">
                 Serviços <ChevronDown size={14} />
               </button>
               <AnimatePresence>
@@ -85,7 +100,7 @@ export default function Header() {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: 10 }}
                     transition={{ duration: 0.2 }}
-                    className="absolute top-full left-0 pt-3 w-64"
+                    className="absolute top-full left-1/2 -translate-x-1/2 pt-3 w-64"
                   >
                     <div className="bg-white rounded-xl shadow-xl border border-gray-100 py-2 overflow-hidden">
                       {services.map((service) => (
@@ -94,7 +109,7 @@ export default function Header() {
                           to={`/servicos/${service.slug}`}
                           className="flex items-center gap-3 px-5 py-3 hover:bg-gray-light transition-colors"
                         >
-                          <service.icon size={18} className="text-blue shrink-0" />
+                          <service.icon size={18} className="text-brand shrink-0" />
                           <span className="font-medium text-text-dark text-sm">{service.title}</span>
                         </Link>
                       ))}
@@ -104,27 +119,16 @@ export default function Header() {
               </AnimatePresence>
             </div>
 
-            {NAV_LINKS.slice(1).map((link) => (
+            {NAV_LINKS.map((link) => (
               <a
                 key={link.label}
                 href={link.href}
-                className="font-bold uppercase text-xs tracking-wider text-white hover:text-blue-light transition-colors"
+                className="font-bold uppercase text-xs tracking-wider text-white hover:text-white/80 transition-colors"
               >
                 {link.label}
               </a>
             ))}
           </nav>
-
-          <div className="hidden lg:block">
-            <a
-              href={WHATSAPP_LINK}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-action hover:bg-action-dark text-white font-extrabold uppercase text-xs tracking-wider px-6 py-3.5 rounded-md transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg"
-            >
-              Solicite um Orçamento <ArrowRight size={16} />
-            </a>
-          </div>
 
           <button
             className="lg:hidden text-white"
@@ -153,12 +157,12 @@ export default function Header() {
                   to={`/servicos/${service.slug}`}
                   className="flex items-center gap-3 px-2 py-2.5 rounded-lg hover:bg-white/10"
                 >
-                  <service.icon size={18} className="text-blue-light" />
+                  <service.icon size={18} className="text-white" />
                   <span className="font-medium text-white text-sm">{service.title}</span>
                 </Link>
               ))}
               <div className="h-px bg-white/10 my-2" />
-              {NAV_LINKS.slice(1).map((link) => (
+              {NAV_LINKS.map((link) => (
                 <a
                   key={link.label}
                   href={link.href}
@@ -179,7 +183,7 @@ export default function Header() {
                 rel="noopener noreferrer"
                 className="mt-3 inline-flex items-center justify-center gap-2 bg-action hover:bg-action-dark text-white font-extrabold uppercase text-xs tracking-wider px-6 py-3.5 rounded-md"
               >
-                Solicite um Orçamento <ArrowRight size={16} />
+                Solicitar Orçamento <ArrowRight size={16} />
               </a>
             </div>
           </motion.div>
