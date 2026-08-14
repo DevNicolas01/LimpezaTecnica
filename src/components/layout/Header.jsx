@@ -41,7 +41,7 @@ export default function Header() {
 
             <div className="flex items-center ml-auto">
               <p className="italic font-bold text-[#0D1B3E] text-lg tracking-wide whitespace-nowrap mr-6">
-                Limpeza Pós-Obra Especializada
+                Limpeza Pós-Obra Profissional
               </p>
 
               <div className="flex items-center gap-3 px-6 flex-shrink-0">
