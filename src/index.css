@@ -43,9 +43,14 @@ body {
   animation: wave-move 10s linear infinite reverse;
 }
 
+.animate-wave-medium {
+  animation: wave-move 13s linear infinite;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .animate-wave-slow,
-  .animate-wave-fast {
+  .animate-wave-fast,
+  .animate-wave-medium {
     animation: none;
   }
 }

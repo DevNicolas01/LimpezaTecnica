@@ -14,7 +14,6 @@ export default function ServiceHighlight({
   flip = false,
   photoFlip = flip,
   offset = 'translate-x-4 translate-y-4',
-  showOrange = false,
   showWatermark = true,
   watermarkSide = 'left',
 }) {
@@ -61,7 +60,7 @@ export default function ServiceHighlight({
         </motion.div>
 
         <div className={photoOrder}>
-          <StackedPhotos flip={photoFlip} offset={offset} showOrange={showOrange} />
+          <StackedPhotos flip={photoFlip} offset={offset} />
         </div>
       </div>
     </section>

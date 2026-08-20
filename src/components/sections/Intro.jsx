@@ -15,7 +15,7 @@ export default function Intro() {
       {/* TODO: substituir pela silhueta real (PNG) do profissional fornecida pelo cliente */}
       <HardHat
         className="hidden lg:block absolute bottom-6 right-10 text-brand/10 pointer-events-none"
-        size={220}
+        size={130}
         strokeWidth={1}
       />
 

@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 
 const VARIANTS = {
-  action: 'bg-action hover:bg-action-dark text-white',
+  action: 'bg-whatsapp hover:bg-[#1DA851] text-white',
   primary: 'bg-brand hover:bg-brand-dark text-white',
   outline: 'bg-transparent border-2 border-white hover:bg-white hover:text-navy text-white',
   whatsapp: 'bg-whatsapp hover:bg-[#1DA851] text-white',

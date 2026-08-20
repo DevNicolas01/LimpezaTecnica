@@ -33,10 +33,15 @@ export default function Header() {
           <div className="flex items-stretch h-full w-full">
             <Link
               to="/"
-              className="relative z-20 flex items-center justify-start pl-20 flex-shrink-0"
+              className="relative z-20 flex items-center justify-start pl-10 flex-shrink-0"
               style={{ width: `${LOGO_ZONE_WIDTH}px` }}
             >
-              <img src={logo} alt="Limpeza Técnica" style={{ height: '150px', width: '200px', transform: 'translateY(28px)' }} />
+              <img
+                src={logo}
+                alt="Limpeza Técnica"
+                className="h-[150px] w-auto object-contain"
+                style={{ transform: 'translateY(28px)' }}
+              />
             </Link>
 
             <div className="flex items-center ml-auto">
@@ -72,7 +77,7 @@ export default function Header() {
                 href={WHATSAPP_LINK}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-[#E8321A] hover:bg-red-700 transition flex items-center gap-2 text-white font-extrabold uppercase tracking-widest whitespace-nowrap flex-shrink-0 h-full"
+                className="bg-whatsapp hover:bg-[#1DA851] transition flex items-center gap-2 text-white font-extrabold uppercase tracking-widest whitespace-nowrap flex-shrink-0 h-full"
                 style={{
                   fontSize: '13px',
                   paddingLeft: '36px',
@@ -155,7 +160,7 @@ export default function Header() {
 
         <div className="flex lg:hidden items-center justify-between bg-[#1B2A4A] px-4" style={{ height: '64px' }}>
           <Link to="/" className="flex items-center gap-2">
-            <img src={logo} alt="Limpeza Técnica" className="h-15 w-15 object-contain rounded-lg bg-white p-5" />
+            <img src={logo} alt="Limpeza Técnica" className="h-11 w-11 shrink-0 object-contain rounded-lg bg-white p-1.5" />
             <span className="font-extrabold text-white text-sm">Limpeza Técnica</span>
           </Link>
           <button className="text-white" onClick={() => setMobileOpen((o) => !o)} aria-label="Abrir menu">
@@ -204,7 +209,7 @@ export default function Header() {
                   href={WHATSAPP_LINK}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-3 inline-flex items-center justify-center gap-2 bg-[#E8321A] hover:bg-red-700 text-white font-extrabold uppercase text-xs tracking-wider px-6 py-3.5"
+                  className="mt-3 inline-flex items-center justify-center gap-2 bg-whatsapp hover:bg-[#1DA851] text-white font-extrabold uppercase text-xs tracking-wider px-6 py-3.5"
                 >
                   Solicitar Orçamento <ArrowRight size={16} />
                 </a>

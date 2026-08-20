@@ -36,8 +36,8 @@ export default function Services() {
           </div>
         </div>
 
-        <div className="flex-1 overflow-x-auto no-scrollbar">
-          <div className="flex gap-5 px-6 py-10 lg:pl-0 lg:-ml-10 lg:pr-10 lg:py-14 relative z-10">
+        <div className="flex-1">
+          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-5 px-6 py-10 lg:pl-0 lg:pr-10 lg:py-14 lg:-ml-14 relative z-10">
             {services.map((service, index) => (
               <ServiceCard key={service.slug} index={index} {...service} />
             ))}

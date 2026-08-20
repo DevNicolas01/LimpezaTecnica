@@ -1,12 +1,11 @@
-// TODO: Substituir pelo telefone real de contato do cliente antes de publicar o site.
 export const CONTACT = {
-  phone: '(XX) XXXXX-XXXX',
-  whatsapp: '55XXXXXXXXXXX',
+  phone: '(54) 99925-5843',
+  whatsapp: '5554999255843',
   email: 'contato@limpezatecnica.com.br',
   // TODO: Substituir pelo endereço real da Limpeza Técnica LTD.
   address: 'Rio Grande do Sul, Brasil',
-  // TODO: Substituir pelo Instagram real do cliente.
-  instagram: 'https://instagram.com/limpezatecnica',
+  instagram: 'https://www.instagram.com/limpezatecnicabg/',
+  facebook: 'https://www.facebook.com/profile.php?id=61583097070295',
   hours: {
     weekdays: '8h00 - 17h00',
     sunday: 'Fechado',

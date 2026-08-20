@@ -60,7 +60,7 @@ export default function WhyUs() {
           >
             <SectionBadge light>✦ Por Que Nos Escolher?</SectionBadge>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-white leading-tight mb-10 max-w-xl">
-              O que torna a <span className="text-action">Limpeza Técnica</span> diferente?
+              O que torna a <span className="text-[#6D93E8]">Limpeza Técnica</span> diferente?
             </h2>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-10">
@@ -71,14 +71,16 @@ export default function WhyUs() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, amount: 0.3 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className={`p-6 rounded-2xl shadow-lg ${reason.dark ? 'bg-action' : 'bg-white'}`}
+                  className={`p-4 h-44 shadow-lg rounded-tl-none rounded-tr-none rounded-bl-none rounded-br-2xl ${
+                    reason.dark ? `bg-brand sm:mt-4` : `bg-white sm:-mt-4`
+                  }`}
                 >
                   <div
-                    className={`w-12 h-12 rounded-xl flex items-center justify-center mb-4 ${
+                    className={`w-10 h-10 rounded-xl flex items-center justify-center mb-3 ${
                       reason.dark ? 'bg-white/20' : 'bg-brand/10'
                     }`}
                   >
-                    <reason.icon className={reason.dark ? 'text-white' : 'text-brand'} size={24} />
+                    <reason.icon className={reason.dark ? 'text-white' : 'text-brand'} size={20} />
                   </div>
                   <h3 className={`font-extrabold text-lg ${reason.dark ? 'text-white' : 'text-navy'}`}>
                     {reason.title}

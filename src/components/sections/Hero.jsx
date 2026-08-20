@@ -8,7 +8,7 @@ export default function Hero() {
   return (
     <section className="relative overflow-hidden">
       <div
-        className="relative bg-cover bg-center pt-28 md:pt-[170px] pb-32 lg:pb-40"
+        className="relative bg-cover bg-center pt-28 md:pt-[170px] pb-52 lg:pb-72"
         style={{ backgroundImage: `url(${HERO_IMAGE})` }}
       >
         <div className="absolute inset-0" style={{ background: 'rgba(10,20,50,0.72)' }} />
@@ -45,7 +45,7 @@ export default function Hero() {
                 href={WHATSAPP_LINK}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-action hover:bg-action-dark text-white font-bold uppercase px-7 py-4 text-sm transition-colors"
+                className="bg-whatsapp hover:bg-[#1DA851] text-white font-bold uppercase px-7 py-4 text-sm transition-colors"
               >
                 Solicitar Orçamento
               </a>
@@ -84,19 +84,42 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none" style={{ height: '140px' }}>
-          <svg viewBox="0 0 1440 140" preserveAspectRatio="none" className="w-full h-full">
+        <div className="absolute left-0 w-full overflow-hidden leading-none" style={{ height: '190px', bottom: '0' }}>
+          <svg
+            viewBox="0 0 2880 220"
+            preserveAspectRatio="none"
+            className="absolute inset-0 w-[200%] h-full animate-wave-slow"
+          >
             <path
-              d="M0,70 C200,140 400,0 600,80 C800,160 1000,20 1200,90 C1320,130 1380,60 1440,80 L1440,140 L0,140 Z"
-              fill="white"
+              d="M0,70 C200,140 400,0 600,80 C800,160 1000,20 1200,90 C1320,130 1380,60 1440,80 C1640,140 1840,0 2040,80 C2240,160 2440,20 2640,90 C2760,130 2820,60 2880,80 L2880,215 C2640,224 2400,206 2160,215 C1920,224 1680,206 1440,215 C1200,224 960,206 720,215 C480,224 240,206 0,215 Z"
+              fill="#15399B"
+              opacity="0.55"
             />
+          </svg>
+          <svg
+            viewBox="0 0 2880 220"
+            preserveAspectRatio="none"
+            className="absolute inset-0 w-[200%] h-full animate-wave-medium"
+          >
             <path
-              d="M0,90 C250,30 500,120 750,60 C1000,0 1200,100 1440,70 L1440,140 L0,140 Z"
-              fill="white"
-              opacity="0.4"
+              d="M0,100 C360,150 1080,50 1440,100 C1800,150 2520,50 2880,100 L2880,216 C2380,207 1940,225 1440,216 C940,207 500,225 0,216 Z"
+              fill="#6D93E8"
+              opacity="0.7"
+            />
+          </svg>
+          <svg
+            viewBox="0 0 2880 220"
+            preserveAspectRatio="none"
+            className="absolute inset-0 w-[200%] h-full animate-wave-fast"
+          >
+            <path
+              d="M0,90 C250,30 500,120 750,60 C1000,0 1200,100 1440,70 C1690,30 1940,120 2190,60 C2440,0 2640,100 2880,70 L2880,214 C2660,207 2420,223 2160,214 C1900,205 1660,225 1440,214 C1220,207 980,223 720,214 C460,205 220,225 0,214 Z"
+              fill="#1B4FC4"
+              opacity="0.9"
             />
           </svg>
         </div>
+        <div className="absolute bottom-0 left-0 w-full bg-white" style={{ height: '14px' }} />
       </div>
     </section>
   )

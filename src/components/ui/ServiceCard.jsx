@@ -9,7 +9,7 @@ export default function ServiceCard({ title, slug, index = 0 }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.3 }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="group relative shrink-0 w-[260px] sm:w-[280px] h-[380px] rounded-2xl overflow-hidden shadow-xl"
+      className="group relative w-full h-[340px] sm:h-[380px] rounded-2xl overflow-hidden shadow-xl"
     >
       {/* Estado normal: foto ANTES (placeholder) */}
       <div className="absolute inset-0 bg-gradient-to-br from-navy to-navy-light flex items-center justify-center transition-opacity duration-500 group-hover:opacity-0">

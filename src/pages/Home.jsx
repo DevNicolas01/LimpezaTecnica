@@ -26,6 +26,8 @@ export default function Home() {
         watermarkSide="left"
       />
 
+      <Testimonials />
+
       {/* Destaque Serviço 2 (espelhado) */}
       <ServiceHighlight
         badge="✦ Qualidade Comprovada no RS"
@@ -36,6 +38,8 @@ export default function Home() {
         watermarkSide="right"
       />
 
+      <CTABanner />
+
       {/* Equipe em Ação (AIDA) */}
       <ServiceHighlight
         badge="✦ Profissionais Nº1 em Limpeza Pós-Obra"
@@ -45,15 +49,12 @@ export default function Home() {
         flip={true}
         photoFlip={false}
         offset="-translate-x-3 translate-y-3"
-        showOrange
         showWatermark={false}
       />
 
-      <CTABanner />
-      <Testimonials />
       <WhyUs />
-      <NextSteps />
       <ServiceArea />
+      <NextSteps />
       <Portfolio />
     </>
   )

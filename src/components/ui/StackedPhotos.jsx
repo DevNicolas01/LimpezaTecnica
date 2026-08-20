@@ -1,13 +1,13 @@
 import { motion } from 'framer-motion'
 import { Waves } from 'lucide-react'
 import ImagePlaceholder from './ImagePlaceholder'
+import logo3 from '../../assets/logo3.png'
 
 export default function StackedPhotos({
   flip = false,
   beforeLabel = '[ Foto: ANTES ]',
   afterLabel = '[ Foto: DEPOIS ]',
   offset = 'translate-x-3 translate-y-3',
-  showOrange = true,
 }) {
   const side = flip ? 'right' : 'left'
 
@@ -17,16 +17,8 @@ export default function StackedPhotos({
       whileInView={{ opacity: 1, x: 0 }}
       viewport={{ once: true, amount: 0.3 }}
       transition={{ duration: 0.6 }}
-      className="relative"
+      className="relative z-0"
     >
-      {showOrange && (
-        <div
-          className={`hidden sm:block absolute -bottom-5 ${
-            flip ? '-right-5' : '-left-5'
-          } w-24 h-16 bg-action/85 rounded-xl -z-10`}
-        />
-      )}
-
       <div className="space-y-5">
         <div className="relative">
           <ImagePlaceholder label={beforeLabel} height="h-52 sm:h-60" />
@@ -44,9 +36,16 @@ export default function StackedPhotos({
           />
         </div>
 
-        <div className="relative">
-          <div className={`hidden sm:block absolute inset-0 -z-10 rounded-2xl bg-brand/40 ${offset}`} />
+        <div className="relative z-0">
+          <div className={`hidden sm:block absolute inset-0 -z-10 rounded-2xl bg-[#5B8DEF] ${offset}`} />
           <ImagePlaceholder label={afterLabel} height="h-52 sm:h-60" />
+          <span
+            className={`hidden sm:flex absolute -bottom-7 ${
+              flip ? '-right-24' : '-left-24'
+            } w-24 h-24 items-center justify-center z-10`}
+          >
+            <img src={logo3} alt="Limpeza Técnica" className="w-full h-full object-contain drop-shadow-lg" />
+          </span>
         </div>
       </div>
     </motion.div>

@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { ChevronLeft, ChevronRight, Building2 } from 'lucide-react'
 import SectionBadge from '../ui/SectionBadge'
 import { portfolio } from '../../data/portfolio'
-import { MAPS_EMBED_SRC } from '../../data/constants'
+import { CONTACT, MAPS_EMBED_SRC } from '../../data/constants'
 
 // lucide-react não inclui ícones de marca (política do projeto) — usamos o glifo do Facebook direto.
 const FACEBOOK_PATH =
@@ -122,9 +122,8 @@ export default function Portfolio() {
         </div>
 
         <div className="flex justify-end mt-8">
-          {/* TODO: substituir pelo link real da página do Facebook do cliente. */}
           <a
-            href="https://facebook.com"
+            href={CONTACT.facebook}
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Facebook"
