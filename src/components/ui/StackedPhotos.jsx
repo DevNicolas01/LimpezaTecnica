@@ -7,6 +7,8 @@ export default function StackedPhotos({
   flip = false,
   beforeLabel = '[ Foto: ANTES ]',
   afterLabel = '[ Foto: DEPOIS ]',
+  beforeSrc,
+  afterSrc,
   offset = 'translate-x-3 translate-y-3',
 }) {
   const side = flip ? 'right' : 'left'
@@ -21,7 +23,7 @@ export default function StackedPhotos({
     >
       <div className="space-y-5">
         <div className="relative">
-          <ImagePlaceholder label={beforeLabel} height="h-52 sm:h-60" />
+          <ImagePlaceholder label={beforeLabel} src={beforeSrc} height="h-52 sm:h-60" />
           <span
             className={`absolute -bottom-3 ${
               flip ? '-left-3' : '-right-3'
@@ -38,7 +40,7 @@ export default function StackedPhotos({
 
         <div className="relative z-0">
           <div className={`hidden sm:block absolute inset-0 -z-10 rounded-2xl bg-[#5B8DEF] ${offset}`} />
-          <ImagePlaceholder label={afterLabel} height="h-52 sm:h-60" />
+          <ImagePlaceholder label={afterLabel} src={afterSrc} height="h-52 sm:h-60" />
           <span
             className={`hidden sm:flex absolute -bottom-7 ${
               flip ? '-right-24' : '-left-24'

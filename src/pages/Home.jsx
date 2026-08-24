@@ -8,6 +8,10 @@ import WhyUs from '../components/sections/WhyUs'
 import NextSteps from '../components/sections/NextSteps'
 import ServiceArea from '../components/sections/ServiceArea'
 import Portfolio from '../components/sections/Portfolio'
+import trianonAntes1 from '../assets/Trianon/antes1.png'
+import trianonDepois1 from '../assets/Trianon/depois1.jpg'
+import sabinoAntes11 from '../assets/Sabino/antes1.1.jpg'
+import sabinoDepois11 from '../assets/Sabino/depois1.1.jpg'
 
 export default function Home() {
   return (
@@ -24,6 +28,8 @@ export default function Home() {
         flip={false}
         offset="translate-x-4 translate-y-4"
         watermarkSide="left"
+        beforeSrc={trianonAntes1}
+        afterSrc={trianonDepois1}
       />
 
       <Testimonials />
@@ -36,6 +42,8 @@ export default function Home() {
         flip={false}
         offset="translate-x-4 translate-y-4"
         watermarkSide="left"
+        beforeSrc={sabinoAntes11}
+        afterSrc={sabinoDepois11}
       />
 
       <CTABanner />
@@ -50,6 +58,8 @@ export default function Home() {
         photoFlip={false}
         offset="-translate-x-3 translate-y-3"
         showWatermark={false}
+        beforeSrc={trianonAntes1}
+        afterSrc={trianonDepois1}
       />
 
       <WhyUs />

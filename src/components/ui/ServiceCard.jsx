@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { ArrowRight } from 'lucide-react'
 
-export default function ServiceCard({ title, slug, index = 0 }) {
+export default function ServiceCard({ title, slug, image, index = 0 }) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
@@ -11,21 +11,14 @@ export default function ServiceCard({ title, slug, index = 0 }) {
       transition={{ duration: 0.5, delay: index * 0.1 }}
       className="group relative w-full h-[340px] sm:h-[380px] rounded-2xl overflow-hidden shadow-xl"
     >
-      {/* Estado normal: foto ANTES (placeholder) */}
-      <div className="absolute inset-0 bg-gradient-to-br from-navy to-navy-light flex items-center justify-center transition-opacity duration-500 group-hover:opacity-0">
-        <span className="text-white/40 font-bold text-xs uppercase tracking-widest">
-          [ Foto: Antes ]
-        </span>
-      </div>
+      <img
+        src={image}
+        alt={title}
+        loading="lazy"
+        className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+      />
 
-      {/* Estado hover: fade para foto DEPOIS (placeholder) */}
-      <div className="absolute inset-0 bg-gradient-to-br from-brand to-brand-dark flex items-center justify-center opacity-0 transition-opacity duration-500 group-hover:opacity-100">
-        <span className="text-white/50 font-bold text-xs uppercase tracking-widest">
-          [ Foto: Depois ]
-        </span>
-      </div>
-
-      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/15 to-transparent" />
 
       <div className="absolute inset-x-0 bottom-0 p-5 flex flex-col items-start gap-3">
         <h3 className="text-lg font-extrabold text-white leading-tight">{title}</h3>

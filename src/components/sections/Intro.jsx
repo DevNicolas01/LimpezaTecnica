@@ -5,6 +5,8 @@ import StackedPhotos from '../ui/StackedPhotos'
 import Button from '../ui/Button'
 import PhoneButton from '../ui/PhoneButton'
 import { WHATSAPP_LINK } from '../../data/constants'
+import sabinoAntes from '../../assets/Sabino/antes1.jpg'
+import sabinoDepois from '../../assets/Sabino/depois1.jpg'
 
 export default function Intro() {
   return (
@@ -23,6 +25,8 @@ export default function Intro() {
         <StackedPhotos
           beforeLabel="[ Foto: ANTES ]"
           afterLabel="[ Foto: DEPOIS ]"
+          beforeSrc={sabinoAntes}
+          afterSrc={sabinoDepois}
           offset="-translate-x-3 translate-y-3"
         />
 

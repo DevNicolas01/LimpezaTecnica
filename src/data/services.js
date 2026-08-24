@@ -1,4 +1,8 @@
 import { Building2, Droplets, Layers, Sparkles } from 'lucide-react'
+import cardEnceradeira from '../assets/Cards/Enceradeira.jpg'
+import cardCobertura from '../assets/Cards/Cobertura.jpg'
+import cardHidrolavagem from '../assets/Cards/hidrolavagem.jpg'
+import cardVidro from '../assets/Cards/Vidro.jpg'
 
 export const services = [
   {
@@ -18,6 +22,7 @@ export const services = [
       'Atendimento a chamados emergenciais em todo o RS',
     ],
     imageLabel: '[ Foto: Limpeza Pós-Obra ]',
+    image: cardEnceradeira,
   },
   {
     slug: 'lavagem-coberturas',
@@ -36,6 +41,7 @@ export const services = [
       'Prazo alinhado ao cronograma da construtora',
     ],
     imageLabel: '[ Foto: Limpeza de Coberturas ]',
+    image: cardCobertura,
   },
   {
     slug: 'hidrolavagem',
@@ -54,6 +60,7 @@ export const services = [
       'Horários flexíveis para não impactar a obra',
     ],
     imageLabel: '[ Foto: Hidrolavagem de Fachadas ]',
+    image: cardHidrolavagem,
   },
   {
     slug: 'limpeza-vidros',
@@ -71,6 +78,7 @@ export const services = [
       'Atendimento a construtoras e incorporadoras em todo o RS',
     ],
     imageLabel: '[ Foto: Limpeza de Vidros ]',
+    image: cardVidro,
   },
 ]
 

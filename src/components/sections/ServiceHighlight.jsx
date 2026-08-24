@@ -16,6 +16,8 @@ export default function ServiceHighlight({
   offset = 'translate-x-4 translate-y-4',
   showWatermark = true,
   watermarkSide = 'left',
+  beforeSrc,
+  afterSrc,
 }) {
   const textOrder = flip ? 'lg:order-2' : 'lg:order-1'
   const photoOrder = flip ? 'lg:order-1' : 'lg:order-2'
@@ -60,7 +62,7 @@ export default function ServiceHighlight({
         </motion.div>
 
         <div className={photoOrder}>
-          <StackedPhotos flip={photoFlip} offset={offset} />
+          <StackedPhotos flip={photoFlip} offset={offset} beforeSrc={beforeSrc} afterSrc={afterSrc} />
         </div>
       </div>
     </section>

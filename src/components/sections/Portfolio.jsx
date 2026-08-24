@@ -2,8 +2,10 @@ import { useState, useCallback } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { ChevronLeft, ChevronRight, Building2 } from 'lucide-react'
 import SectionBadge from '../ui/SectionBadge'
+import PortfolioMap from '../ui/PortfolioMap'
 import { portfolio } from '../../data/portfolio'
-import { CONTACT, MAPS_EMBED_SRC } from '../../data/constants'
+import { portfolioPins } from '../../data/portfolioPins'
+import { CONTACT } from '../../data/constants'
 
 // lucide-react não inclui ícones de marca (política do projeto) — usamos o glifo do Facebook direto.
 const FACEBOOK_PATH =
@@ -38,15 +40,8 @@ export default function Portfolio() {
           </h2>
         </motion.div>
 
-        {/* TODO: cluster de ~8 pinos exige a Maps JavaScript API com chave/billing do cliente. */}
-        <div className="rounded-2xl overflow-hidden shadow-lg mb-14 max-w-4xl mx-auto">
-          <iframe
-            title="Mapa de projetos no RS"
-            src={MAPS_EMBED_SRC}
-            className="w-full h-[350px] border-0"
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-          />
+        <div className="mb-14">
+          <PortfolioMap pins={portfolioPins} height={560} />
         </div>
 
         <div className="flex items-center justify-center gap-6">
