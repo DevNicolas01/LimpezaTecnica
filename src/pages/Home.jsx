@@ -28,14 +28,14 @@ export default function Home() {
 
       <Testimonials />
 
-      {/* Destaque Serviço 2 (espelhado) */}
+      {/* Destaque Serviço 2 */}
       <ServiceHighlight
         badge="✦ Qualidade Comprovada no RS"
         title="Anos entregando obras limpas no Rio Grande do Sul"
         paragraph="Engenheiros e arquitetos que já trabalharam com a gente sabem: a Limpeza Técnica LTD entrega padrão técnico superior, removendo até as manchas mais difíceis — cimento, selante, tinta — sem danificar revestimentos, vidros ou esquadrias, com produtos adequados a cada tipo de material e capacidade para atender grandes volumes dentro do prazo combinado com a construtora."
-        flip={true}
-        offset="-translate-x-4 translate-y-4"
-        watermarkSide="right"
+        flip={false}
+        offset="translate-x-4 translate-y-4"
+        watermarkSide="left"
       />
 
       <CTABanner />
