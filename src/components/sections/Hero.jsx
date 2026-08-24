@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 import { Phone, Star } from 'lucide-react'
 import { CONTACT, WHATSAPP_LINK } from '../../data/constants'
 import teamPhoto from '../../assets/DSC_4830.png'
-import heroBackground from '../../assets/fundo1-web.jpg'
+import heroBackground from '../../assets/fundo1.jpg'
 
 const HERO_IMAGE = heroBackground
 
