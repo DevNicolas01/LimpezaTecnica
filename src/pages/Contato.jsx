@@ -1,10 +1,10 @@
 import { useState } from 'react'
-import { motion } from 'framer-motion'
-import { MapPin, Phone, Mail, Clock, Send } from 'lucide-react'
+import { motion, AnimatePresence } from 'framer-motion'
+import { MapPin, Phone, Mail, Clock, Send, CheckCircle2 } from 'lucide-react'
 import SectionBadge from '../components/ui/SectionBadge'
 import Button from '../components/ui/Button'
 import { services } from '../data/services'
-import { CONTACT } from '../data/constants'
+import { CONTACT, WHATSAPP_LINK } from '../data/constants'
 
 // lucide-react não inclui ícones de marca (política do projeto) — usamos os glifos direto.
 const FACEBOOK_PATH =
@@ -22,6 +22,7 @@ const EMPTY_FORM = {
 
 export default function Contato() {
   const [form, setForm] = useState(EMPTY_FORM)
+  const [sent, setSent] = useState(false)
 
   const handleChange = (e) => {
     const { name, value } = e.target
@@ -30,8 +31,22 @@ export default function Contato() {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    // Formulário apenas front-end — sem integração com backend.
-    alert('Mensagem enviada! Em breve nossa equipe entrará em contato.')
+
+    // Sem backend próprio: a mensagem é entregue via WhatsApp, já o canal
+    // principal de atendimento do site, com os dados do formulário prontos.
+    const lines = [
+      `*Novo contato pelo site*`,
+      `Nome: ${form.name}`,
+      `Telefone: ${form.phone}`,
+      `E-mail: ${form.email}`,
+      `Serviço: ${form.service}`,
+      '',
+      form.message,
+    ]
+    const text = encodeURIComponent(lines.join('\n'))
+    window.open(`${WHATSAPP_LINK}?text=${text}`, '_blank', 'noopener,noreferrer')
+
+    setSent(true)
     setForm(EMPTY_FORM)
   }
 
@@ -155,6 +170,23 @@ export default function Contato() {
             <Button type="submit" icon={Send} className="w-full sm:w-auto">
               Enviar Mensagem
             </Button>
+
+            <AnimatePresence>
+              {sent && (
+                <motion.div
+                  initial={{ opacity: 0, y: -8 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -8 }}
+                  className="flex items-start gap-3 bg-whatsapp/10 border border-whatsapp/30 rounded-lg px-4 py-3"
+                >
+                  <CheckCircle2 size={20} className="text-whatsapp shrink-0 mt-0.5" />
+                  <p className="text-sm text-navy">
+                    Sua mensagem foi preparada e o WhatsApp abriu em uma nova aba — é só confirmar
+                    o envio por lá para falar direto com a nossa equipe.
+                  </p>
+                </motion.div>
+              )}
+            </AnimatePresence>
           </motion.form>
 
           <motion.div

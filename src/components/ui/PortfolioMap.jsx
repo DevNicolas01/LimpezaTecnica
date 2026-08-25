@@ -89,7 +89,7 @@ export default function PortfolioMap({ pins, height = 560 }) {
               <img
                 src={selected.photo}
                 alt={selected.client}
-                className="w-full h-64 object-cover"
+                className="w-full h-56 object-cover"
               />
               <button
                 onClick={() => setSelected(null)}

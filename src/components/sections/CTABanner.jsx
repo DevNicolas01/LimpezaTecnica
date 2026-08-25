@@ -1,8 +1,8 @@
 import { ArrowRight } from 'lucide-react'
 import Button from '../ui/Button'
 import PhoneButton from '../ui/PhoneButton'
-import ImagePlaceholder from '../ui/ImagePlaceholder'
 import { WHATSAPP_LINK } from '../../data/constants'
+import logo from '../../assets/logo.png'
 
 const BANNER_IMAGE = 'https://images.unsplash.com/photo-1521790797524-b2497295b8a0?w=1400&q=80'
 
@@ -14,9 +14,9 @@ export default function CTABanner() {
     >
       <div className="absolute inset-0" style={{ background: 'rgba(13,27,62,0.80)' }} />
 
-      {/* Foto pequena saindo do banner */}
-      <div className="hidden md:block absolute -top-8 left-10 lg:left-20 z-10 w-32 h-32 rounded-2xl border-4 border-white shadow-2xl overflow-hidden">
-        <ImagePlaceholder label="[ Foto: Equipe ]" height="h-full" />
+      {/* Logo pequena saindo do banner */}
+      <div className="hidden md:flex absolute -top-8 left-10 lg:left-20 z-10 w-32 h-32 rounded-2xl border-4 border-white shadow-2xl overflow-hidden bg-white items-center justify-center p-4">
+        <img src={logo} alt="Limpeza Técnica" className="w-full h-full object-contain" />
       </div>
 
       <div className="relative container-limpa py-10 flex flex-col items-center text-center">

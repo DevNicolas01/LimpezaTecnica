@@ -12,6 +12,8 @@ import trianonAntes1 from '../assets/Trianon/antes1.png'
 import trianonDepois1 from '../assets/Trianon/depois1.jpg'
 import sabinoAntes11 from '../assets/Sabino/antes1.1.jpg'
 import sabinoDepois11 from '../assets/Sabino/depois1.1.jpg'
+import sabinoAntes10 from '../assets/Sabino/antes10.jpg'
+import sabinoDepois10 from '../assets/Sabino/depois10.jpg'
 
 export default function Home() {
   return (
@@ -28,8 +30,8 @@ export default function Home() {
         flip={false}
         offset="translate-x-4 translate-y-4"
         watermarkSide="left"
-        beforeSrc={trianonAntes1}
-        afterSrc={trianonDepois1}
+        beforeSrc={sabinoAntes11}
+        afterSrc={sabinoDepois11}
       />
 
       <Testimonials />
@@ -42,8 +44,8 @@ export default function Home() {
         flip={false}
         offset="translate-x-4 translate-y-4"
         watermarkSide="left"
-        beforeSrc={sabinoAntes11}
-        afterSrc={sabinoDepois11}
+        beforeSrc={sabinoAntes10}
+        afterSrc={sabinoDepois10}
       />
 
       <CTABanner />

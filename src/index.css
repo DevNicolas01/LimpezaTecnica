@@ -4,11 +4,24 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 84px;
+}
+
+@media (min-width: 1280px) {
+  html {
+    scroll-padding-top: 110px;
+  }
 }
 
 body {
   font-family: 'Montserrat', sans-serif;
   color: #1a1a1a;
+}
+
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 @layer utilities {

@@ -12,8 +12,6 @@ export const CONTACT = {
   },
 }
 
-export const SERVICE_CITIES = ['Porto Alegre', 'Caxias do Sul', 'Novo Hamburgo', 'São Leopoldo']
-
 // Mapa centralizado no Rio Grande do Sul, zoom 7.
 // OBS: o formato de embed sem chave de API do Google sempre inclui um marcador central
 // (o formato "sem marcador" via URL @lat,lng é bloqueado por X-Frame-Options em iframe).

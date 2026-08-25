@@ -14,13 +14,13 @@ const STEPS = [
     icon: CalendarCheck,
     step: '02',
     title: 'Agende agora mesmo',
-    href: CONTACT.instagram,
+    href: WHATSAPP_LINK,
   },
   {
     icon: Coffee,
     step: '03',
     title: 'Relaxe e aproveite',
-    href: WHATSAPP_LINK,
+    href: CONTACT.instagram,
   },
 ]
 

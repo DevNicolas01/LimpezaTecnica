@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X, ChevronDown, ArrowRight, Phone } from 'lucide-react'
@@ -19,17 +19,30 @@ const NAV_LINKS = [
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false)
   const [servicesOpen, setServicesOpen] = useState(false)
+  const servicesRef = useRef(null)
   const location = useLocation()
 
   useEffect(() => {
     setMobileOpen(false)
+    setServicesOpen(false)
   }, [location])
+
+  useEffect(() => {
+    if (!servicesOpen) return
+    const handleClickOutside = (e) => {
+      if (servicesRef.current && !servicesRef.current.contains(e.target)) {
+        setServicesOpen(false)
+      }
+    }
+    document.addEventListener('mousedown', handleClickOutside)
+    return () => document.removeEventListener('mousedown', handleClickOutside)
+  }, [servicesOpen])
 
   return (
     <>
       <header className="fixed top-0 left-0 w-full z-50 shadow-md">
         {/* Faixa 1 — branca, 56px */}
-        <div className="hidden lg:block bg-white w-full" style={{ height: '56px' }}>
+        <div className="hidden xl:block bg-white w-full" style={{ height: '56px' }}>
           <div className="flex items-stretch h-full w-full">
             <Link
               to="/"
@@ -96,28 +109,41 @@ export default function Header() {
         </div>
 
         {/* Faixa 2 — branca à esquerda (sob a logo) + azul escuro com corte diagonal a partir do menu */}
-        <div className="hidden lg:block relative bg-white w-full" style={{ height: '40px' }}>
+        <div className="hidden xl:block relative bg-white w-full" style={{ height: '40px' }}>
+          {/* Fundo decorativo com o corte diagonal — separado do conteúdo abaixo para que o
+              clip-path não recorte o dropdown "Serviços", que precisa "vazar" para fora desta faixa. */}
           <div
-            className="absolute top-0 h-full flex items-center gap-8"
+            className="absolute top-0 h-full pointer-events-none"
             style={{
               left: `${LOGO_ZONE_WIDTH}px`,
               right: 0,
               backgroundColor: '#355db3',
               clipPath: 'polygon(44px 0%, 1000% 0%, 100% 100%, 0% 100%)',
+            }}
+          />
+
+          <div
+            className="absolute top-0 h-full flex items-center gap-8"
+            style={{
+              left: `${LOGO_ZONE_WIDTH}px`,
+              right: 0,
               paddingLeft: '44px',
             }}
           >
             <div
+              ref={servicesRef}
               className="relative flex items-center h-full"
               onMouseEnter={() => setServicesOpen(true)}
               onMouseLeave={() => setServicesOpen(false)}
             >
               <button
+                onClick={() => setServicesOpen(true)}
+                aria-expanded={servicesOpen}
                 className="text-white hover:text-blue-300 transition flex items-center gap-1"
                 style={{ fontSize: '11px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', whiteSpace: 'nowrap' }}
               >
                 Serviços
-                <ChevronDown size={12} />
+                <ChevronDown size={12} className={`transition-transform ${servicesOpen ? 'rotate-180' : ''}`} />
               </button>
               <AnimatePresence>
                 {servicesOpen && (
@@ -146,19 +172,19 @@ export default function Header() {
             </div>
 
             {NAV_LINKS.map((link) => (
-              <a
+              <Link
                 key={link.label}
-                href={link.href}
+                to={link.href}
                 className="text-white hover:text-blue-300 transition flex items-center gap-1"
                 style={{ fontSize: '11px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', whiteSpace: 'nowrap' }}
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
           </div>
         </div>
 
-        <div className="flex lg:hidden items-center justify-between bg-[#1B2A4A] px-4" style={{ height: '64px' }}>
+        <div className="flex xl:hidden items-center justify-between bg-[#1B2A4A] px-4" style={{ height: '64px' }}>
           <Link to="/" className="flex items-center gap-2">
             <img src={logo} alt="Limpeza Técnica" className="h-11 w-11 shrink-0 object-contain rounded-lg bg-white p-1.5" />
             <span className="font-extrabold text-white text-sm">Limpeza Técnica</span>
@@ -175,7 +201,7 @@ export default function Header() {
               animate={{ height: 'auto', opacity: 1 }}
               exit={{ height: 0, opacity: 0 }}
               transition={{ duration: 0.25 }}
-              className="lg:hidden overflow-hidden bg-[#1B2A4A] border-t border-white/10"
+              className="xl:hidden overflow-hidden bg-[#1B2A4A] border-t border-white/10"
             >
               <div className="px-6 py-4 flex flex-col gap-1">
                 <p className="font-bold text-xs uppercase text-white/50 px-2 pt-2 pb-1">Serviços</p>
@@ -191,13 +217,13 @@ export default function Header() {
                 ))}
                 <div className="h-px bg-white/10 my-2" />
                 {NAV_LINKS.map((link) => (
-                  <a
+                  <Link
                     key={link.label}
-                    href={link.href}
+                    to={link.href}
                     className="px-2 py-2.5 rounded-lg hover:bg-white/10 font-bold uppercase text-xs tracking-wider text-white"
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 ))}
                 <a
                   href={`tel:${CONTACT.phone.replace(/\D/g, '')}`}
@@ -222,8 +248,8 @@ export default function Header() {
       </header>
 
       {/* Espaçador — empurra o conteúdo da página para baixo do header fixo (94px = 56+38 no desktop, 64px no mobile) */}
-      <div className="hidden lg:block" style={{ height: '94px' }} />
-      <div className="lg:hidden" style={{ height: '64px' }} />
+      <div className="hidden xl:block" style={{ height: '94px' }} />
+      <div className="xl:hidden" style={{ height: '64px' }} />
     </>
   )
 }
