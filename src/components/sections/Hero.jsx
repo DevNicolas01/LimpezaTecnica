@@ -92,7 +92,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.2 }}
-          className="hidden lg:block absolute bottom-10 right-0 xl:right-4 h-[620px] xl:h-[740px] w-auto object-contain object-bottom pointer-events-none select-none"
+          className="hidden lg:block absolute bottom-10 -right-28 xl:-right-16 h-[620px] xl:h-[740px] w-auto object-contain object-bottom pointer-events-none select-none"
         />
 
         <div className="absolute left-0 w-full overflow-hidden leading-none" style={{ height: '190px', bottom: '0' }}>
