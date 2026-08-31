@@ -1,6 +1,9 @@
 import { useEffect, useRef, useState } from 'react'
 import L from 'leaflet'
 import 'leaflet/dist/leaflet.css'
+import 'leaflet.markercluster/dist/MarkerCluster.css'
+import 'leaflet.markercluster/dist/MarkerCluster.Default.css'
+import 'leaflet.markercluster'
 import { MapPin, X } from 'lucide-react'
 
 function createPinIcon(color) {
@@ -13,6 +16,26 @@ function createPinIcon(color) {
       </svg>`,
     iconSize: [34, 44],
     iconAnchor: [17, 44],
+  })
+}
+
+// Vários pinos em uma mesma cidade (ex.: Bento Gonçalves) ficam sobrepostos
+// no zoom geral do RS, tornando os de baixo impossíveis de clicar — por isso
+// agrupamos em clusters que se separam (spiderfy) ao clicar/dar zoom.
+function createClusterIcon(cluster) {
+  const count = cluster.getChildCount()
+  return L.divIcon({
+    className: '',
+    html: `
+      <div style="
+        width: 38px; height: 38px; border-radius: 9999px;
+        background: #1B4FC4; border: 3px solid #ffffff;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.35);
+        display: flex; align-items: center; justify-content: center;
+        color: #ffffff; font-weight: 800; font-size: 14px; font-family: inherit;
+      ">${count}</div>`,
+    iconSize: [38, 38],
+    iconAnchor: [19, 19],
   })
 }
 
@@ -38,13 +61,21 @@ export default function PortfolioMap({ pins, height = 560 }) {
       maxZoom: 19,
     }).addTo(map)
 
+    const clusterGroup = L.markerClusterGroup({
+      iconCreateFunction: createClusterIcon,
+      spiderfyOnMaxZoom: true,
+      showCoverageOnHover: false,
+      maxClusterRadius: 50,
+    })
+
     const markers = pins.map((pin) => {
       const marker = L.marker([pin.lat, pin.lng], { icon: PIN_ICON })
       marker.on('click', () => setSelected(pin))
-      marker.addTo(map)
       return marker
     })
     markersRef.current = markers
+    clusterGroup.addLayers(markers)
+    map.addLayer(clusterGroup)
 
     const group = L.featureGroup(markers)
     map.fitBounds(group.getBounds().pad(0.3))

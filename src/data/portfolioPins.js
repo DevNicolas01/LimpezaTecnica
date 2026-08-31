@@ -1,12 +1,14 @@
+import casagrandaFoto from '../assets/Casagranda/fotopredio1.jpg'
+import casagrandaLogo from '../assets/Casagranda/Logo Casagranda.jpg'
 import cignachiPredio from '../assets/CIgnachi/Predio.jpg'
 import cignachiLogo from '../assets/CIgnachi/images.png'
 import dalmasFoto from '../assets/Dalmas-Carlos Barbosa/foto1.jpg'
 import dalmasLogo from '../assets/Dalmas-Carlos Barbosa/construtora_dalmas_logo.jpeg'
 import mgfConcept from '../assets/MGF/Concept-NovoHamburgo.JPG'
 import mgfGomes256 from '../assets/MGF/Gomes256 Novo Hamburgo.JPG'
-import mgfGranPark from '../assets/MGF/Gran Park-Bento Gonvçalves.jpg'
+import mgfGranPark from '../assets/MGF/fotonova.JPG'
 import mgfLeavs from '../assets/MGF/Leavs-PortoAlegre.JPG'
-import mgfLogo from '../assets/MGF/rodape-logoMGF.png'
+import mgfLogo from '../assets/MGF/mgfincorporadora_logo.jpeg'
 import parisottoFoto from '../assets/Parisotto/Parisotto.jpg'
 import parisottoLogo from '../assets/Parisotto/Logo Parisotto.png'
 import trianonAntes from '../assets/Trianon/antes2.jpg'
@@ -18,6 +20,19 @@ import vuelmaLogo from '../assets/Vuelma/logo-vuelma.svg'
 // Coordenadas aproximadas dos municípios (centro urbano).
 // serviceSlug referencia src/data/services.js — usado no botão "Ver detalhes do serviço".
 export const portfolioPins = [
+  {
+    id: 'casagranda-ca-tiradentes-bento-goncalves',
+    client: 'Construtora Casagranda — CA Tiradentes',
+    city: 'Bento Gonçalves',
+    state: 'RS',
+    lat: -29.1741,
+    lng: -51.5209,
+    photo: casagrandaFoto,
+    logo: casagrandaLogo,
+    serviceSlug: 'limpeza-fachadas',
+    description:
+      'Limpeza fina dos 14 andares do edifício CA Tiradentes, no coração de Bento Gonçalves, preparando cada unidade de alto padrão para o mercado de Airbnb. Resultado elogiado pela Casagranda e pelos clientes finais, que receberam os imóveis com brilho e conforto.',
+  },
   {
     id: 'cignachi-farroupilha',
     client: 'Cignachi Incorporadora',
@@ -81,7 +96,7 @@ export const portfolioPins = [
     logo: mgfLogo,
     serviceSlug: 'limpeza-fachadas',
     description:
-      'Limpeza pós-obra do residencial Gran Park, da MGF Incorporadora em Bento Gonçalves, preparado para a vistoria de entrega da construtora.',
+      'Um dos maiores desafios da nossa trajetória: pós-obra completa do Gran Park, empreendimento da MGF Incorporadora com 476 apartamentos e mais de 30 mil m² de áreas privativas e comuns. Atuamos em todas as etapas, da limpeza grossa à finalização fina, com organização e cronograma alinhados à obra.',
   },
   {
     id: 'mgf-leavs-porto-alegre',

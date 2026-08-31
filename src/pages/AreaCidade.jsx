@@ -1,6 +1,8 @@
+import { useState } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { MapPin, ArrowLeft, ArrowRight } from 'lucide-react'
 import Button from '../components/ui/Button'
+import ProjectModal from '../components/ui/ProjectModal'
 import { WHATSAPP_LINK } from '../data/constants'
 import { getServiceCityBySlug } from '../data/serviceCities'
 import { portfolio } from '../data/portfolio'
@@ -10,6 +12,7 @@ export default function AreaCidade() {
   const { cidade } = useParams()
   const city = getServiceCityBySlug(cidade)
   const cityName = city?.name ?? cidade
+  const [selectedProject, setSelectedProject] = useState(null)
 
   const normalized = cityName.toLowerCase()
   const matchedPins = portfolioPins.filter((pin) => pin.city.toLowerCase() === normalized)
@@ -65,14 +68,22 @@ export default function AreaCidade() {
                   <p className="text-gray-600 text-sm leading-relaxed mb-4 flex-1">
                     {pin.description}
                   </p>
-                  {pin.serviceSlug && (
-                    <Link
-                      to={`/servicos/${pin.serviceSlug}`}
-                      className="text-brand hover:text-brand-dark font-bold text-sm inline-flex items-center gap-1"
-                    >
-                      Ver serviço <ArrowRight size={14} />
-                    </Link>
-                  )}
+                  <button
+                    onClick={() =>
+                      setSelectedProject({
+                        photo: pin.photo,
+                        logo: pin.logo,
+                        title: pin.client,
+                        city: pin.city,
+                        state: pin.state,
+                        description: pin.description,
+                        serviceSlug: pin.serviceSlug,
+                      })
+                    }
+                    className="text-brand hover:text-brand-dark font-bold text-sm inline-flex items-center gap-1"
+                  >
+                    Ver serviço <ArrowRight size={14} />
+                  </button>
                 </div>
               </div>
             ))}
@@ -92,19 +103,31 @@ export default function AreaCidade() {
                   <span>{item.responsible}</span>
                   <span>{item.date}</span>
                 </div>
-                {item.serviceSlug && (
-                  <Link
-                    to={`/servicos/${item.serviceSlug}`}
-                    className="text-brand hover:text-brand-dark font-bold text-sm inline-flex items-center gap-1"
-                  >
-                    Ver serviço <ArrowRight size={14} />
-                  </Link>
-                )}
+                <button
+                  onClick={() =>
+                    setSelectedProject({
+                      photo: null,
+                      logo: null,
+                      title: item.category,
+                      city: item.city,
+                      state: null,
+                      description: item.description,
+                      serviceSlug: item.serviceSlug,
+                    })
+                  }
+                  className="text-brand hover:text-brand-dark font-bold text-sm inline-flex items-center gap-1"
+                >
+                  Ver serviço <ArrowRight size={14} />
+                </button>
               </div>
             ))}
           </div>
         )}
       </div>
+
+      {selectedProject && (
+        <ProjectModal project={selectedProject} onClose={() => setSelectedProject(null)} />
+      )}
     </section>
   )
 }

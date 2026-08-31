@@ -11,8 +11,8 @@ const LOGO_ZONE_WIDTH = 250
 const NAV_LINKS = [
   { label: 'Por Que Nós', href: '/#por-que-nos' },
   { label: 'Como Funciona', href: '/#como-funciona' },
-  { label: 'Portfólio', href: '/#portfolio' },
   { label: 'Área de Atendimento', href: '/#atendimento' },
+  { label: 'Portfólio', href: '/#portfolio' },
   { label: 'Contato', href: '/contato' },
 ]
 
