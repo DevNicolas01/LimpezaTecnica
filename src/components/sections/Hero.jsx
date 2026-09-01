@@ -10,7 +10,7 @@ export default function Hero() {
   return (
     <section className="relative overflow-hidden">
       <div
-        className="relative bg-cover bg-center pt-28 md:pt-[170px] pb-52 lg:pb-72"
+        className="relative bg-cover bg-center pt-28 md:pt-[170px] pb-80 sm:pb-96 lg:pb-72"
         style={{ backgroundImage: `url(${HERO_IMAGE})` }}
       >
         <div className="absolute inset-0" style={{ background: 'rgba(10,20,50,0.72)' }} />
@@ -66,20 +66,22 @@ export default function Hero() {
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="mt-6 flex items-center gap-2"
+              className="mt-6 flex flex-col gap-1"
             >
-              <span className="text-2xl font-black">
-                <span className="text-[#4285F4]">G</span>
-                <span className="text-[#EA4335]">o</span>
-                <span className="text-[#FBBC05]">o</span>
-                <span className="text-[#4285F4]">g</span>
-                <span className="text-[#34A853]">l</span>
-                <span className="text-[#EA4335]">e</span>
-              </span>
-              <div className="flex gap-1">
-                {Array.from({ length: 5 }).map((_, i) => (
-                  <Star key={i} size={18} className="fill-yellow-400 text-yellow-400" />
-                ))}
+              <div className="flex items-center gap-2">
+                <span className="text-2xl font-black">
+                  <span className="text-[#4285F4]">G</span>
+                  <span className="text-[#EA4335]">o</span>
+                  <span className="text-[#FBBC05]">o</span>
+                  <span className="text-[#4285F4]">g</span>
+                  <span className="text-[#34A853]">l</span>
+                  <span className="text-[#EA4335]">e</span>
+                </span>
+                <div className="flex gap-1">
+                  {Array.from({ length: 5 }).map((_, i) => (
+                    <Star key={i} size={18} className="fill-yellow-400 text-yellow-400" />
+                  ))}
+                </div>
               </div>
               <span className="text-white text-sm">5.0 — Avaliação Google</span>
             </motion.div>
@@ -92,7 +94,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.2 }}
-          className="hidden lg:block absolute bottom-10 -right-28 xl:-right-16 h-[620px] xl:h-[740px] w-auto object-contain object-bottom pointer-events-none select-none"
+          className="block absolute bottom-20 right-2 h-48 sm:h-56 sm:right-4 sm:bottom-24 md:h-64 lg:h-[620px] lg:bottom-10 lg:-right-28 xl:h-[740px] xl:-right-16 w-auto object-contain object-bottom pointer-events-none select-none"
         />
 
         <div className="absolute left-0 w-full overflow-hidden leading-none" style={{ height: '190px', bottom: '0' }}>

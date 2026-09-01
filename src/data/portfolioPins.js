@@ -100,7 +100,7 @@ export const portfolioPins = [
   },
   {
     id: 'mgf-leavs-porto-alegre',
-    client: 'MGF Incorporadora — Leavs',
+    client: 'MGF Residencial - Leaves',
     city: 'Porto Alegre',
     state: 'RS',
     lat: -30.0346,
@@ -109,7 +109,7 @@ export const portfolioPins = [
     logo: mgfLogo,
     serviceSlug: 'limpeza-fachadas',
     description:
-      'Limpeza técnica de pós-obra do residencial Leavs, da MGF Incorporadora em Porto Alegre, com padrão de acabamento impecável na entrega.',
+      'Limpeza técnica de pós-obra do residencial Leaves, da MGF Incorporadora em Porto Alegre, com padrão de acabamento impecável na entrega.',
   },
   {
     id: 'parisotto-bento-goncalves',
