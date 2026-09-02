@@ -2,7 +2,7 @@ export const CONTACT = {
   phone: '(54) 99925-5843',
   whatsapp: '5554999255843',
   email: 'contato@limpezatecnica.com.br',
-  // TODO: Substituir pelo endereço real da Limpeza Técnica LTD.
+  // TODO: Substituir pelo endereço real da Limpeza Técnica.
   address: 'Rio Grande do Sul, Brasil',
   instagram: 'https://www.instagram.com/limpezatecnicabg/',
   facebook: 'https://www.facebook.com/profile.php?id=61583097070295',

@@ -23,9 +23,7 @@ export default function Hero() {
               transition={{ duration: 0.6 }}
               className="text-4xl sm:text-5xl font-black text-white leading-tight"
             >
-              Especialistas Nº1 em
-              <br />
-              Limpeza Pós-Obra no RS
+              Especialistas em Limpeza Pós-Obra
             </motion.h1>
 
             <motion.p

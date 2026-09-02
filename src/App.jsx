@@ -9,7 +9,7 @@ const Contato = lazy(() => import('./pages/Contato'))
 const AreaCidade = lazy(() => import('./pages/AreaCidade'))
 const LimpezaFachadas = lazy(() => import('./pages/services/LimpezaFachadas'))
 const LavagemCoberturas = lazy(() => import('./pages/services/LavagemCoberturas'))
-const LimpezaVidros = lazy(() => import('./pages/services/LimpezaVidros'))
+const ServicosImobiliaria = lazy(() => import('./pages/services/ServicosImobiliaria'))
 const Hidrolavagem = lazy(() => import('./pages/services/Hidrolavagem'))
 
 function ScrollToTop() {
@@ -56,7 +56,7 @@ export default function App() {
             <Route path="/" element={<Home />} />
             <Route path="/servicos/limpeza-fachadas" element={<LimpezaFachadas />} />
             <Route path="/servicos/lavagem-coberturas" element={<LavagemCoberturas />} />
-            <Route path="/servicos/limpeza-vidros" element={<LimpezaVidros />} />
+            <Route path="/servicos/servicos-imobiliaria" element={<ServicosImobiliaria />} />
             <Route path="/servicos/hidrolavagem" element={<Hidrolavagem />} />
             <Route path="/contato" element={<Contato />} />
             <Route path="/area/:cidade" element={<AreaCidade />} />

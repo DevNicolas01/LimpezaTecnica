@@ -41,7 +41,7 @@ export default function Intro() {
             Veja a diferença da Limpeza Técnica
           </h2>
           <p className="text-gray-600 leading-relaxed mb-4">
-            A Limpeza Técnica LTD nasceu para atender construtoras, incorporadoras, engenheiros e
+            A Limpeza Técnica nasceu para atender construtoras, incorporadoras, engenheiros e
             arquitetos que precisam de resultado impecável na entrega da obra. Removemos respingos
             de tinta, manchas de cimento e resíduos de construção em todas as superfícies.
           </p>

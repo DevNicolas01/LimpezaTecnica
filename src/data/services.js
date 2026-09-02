@@ -1,8 +1,8 @@
-import { Building2, Droplets, Layers, Sparkles } from 'lucide-react'
+import { Building2, Droplets, Layers, Home } from 'lucide-react'
 import cardEnceradeira from '../assets/Cards/Enceradeira.jpg'
 import cardCobertura from '../assets/Cards/Cobertura.jpg'
 import cardHidrolavagem from '../assets/Cards/hidrolavagem.jpg'
-import cardVidro from '../assets/Cards/Vidro.jpg'
+import cardImobiliaria from '../assets/imobilaria.jpg'
 
 export const services = [
   {
@@ -12,7 +12,7 @@ export const services = [
     shortDescription:
       'Remoção de resíduos de construção, respingos de tinta e manchas em todas as superfícies.',
     description: [
-      'A limpeza pós-obra é a etapa final que garante a entrega de um imóvel realmente pronto para uso. A Limpeza Técnica LTD remove respingos de tinta, manchas de cimento, poeira de reboco, resíduos de gesso e sobras de material de acabamento em todas as superfícies — pisos, paredes, bancadas, esquadrias e áreas comuns.',
+      'A limpeza pós-obra é a etapa final que garante a entrega de um imóvel realmente pronto para uso. A Limpeza Técnica remove respingos de tinta, manchas de cimento, poeira de reboco, resíduos de gesso e sobras de material de acabamento em todas as superfícies — pisos, paredes, bancadas, esquadrias e áreas comuns.',
       'Com anos de experiência atendendo construtoras e incorporadoras no Rio Grande do Sul, utilizamos metodologia profissional e produtos especializados para cada tipo de material, evitando danos a revestimentos, metais e acabamentos delicados.',
     ],
     benefits: [
@@ -25,6 +25,25 @@ export const services = [
     image: cardEnceradeira,
   },
   {
+    slug: 'servicos-imobiliaria',
+    icon: Home,
+    title: 'Serviços de Imobiliária',
+    shortDescription:
+      'Limpeza técnica para imobiliárias: vitrines, escritórios e imóveis prontos para visita.',
+    description: [
+      'Imobiliárias precisam de ambientes impecáveis para causar boa impressão — da vitrine de vidro com os imóveis em destaque até as unidades prontas para receber clientes em visita.',
+      'A Limpeza Técnica atende imobiliárias com limpeza de vitrines e fachadas de escritório, além da preparação de imóveis residenciais e comerciais para venda, locação ou visitação, garantindo um ambiente limpo e atrativo em cada apresentação.',
+    ],
+    benefits: [
+      'Limpeza de vitrines e fachadas de escritório',
+      'Preparação de imóveis para visitas e fotos',
+      'Atendimento a imóveis residenciais e comerciais',
+      'Agendamento flexível conforme a agenda de visitas',
+    ],
+    imageLabel: '[ Foto: Serviços de Imobiliária ]',
+    image: cardImobiliaria,
+  },
+  {
     slug: 'lavagem-coberturas',
     icon: Layers,
     title: 'Limpeza de Coberturas',
@@ -32,7 +51,7 @@ export const services = [
       'Limpeza técnica de telhados e coberturas após a obra, prevenindo infiltrações e resíduos.',
     description: [
       'Telhados e coberturas recém-instalados acumulam resíduos de argamassa, poeira de acabamento e detritos de obra que comprometem tanto a estética quanto a impermeabilização da estrutura.',
-      'A Limpeza Técnica LTD remove esse acúmulo sem danificar telhas, calhas ou rufos, deixando a cobertura pronta para a vistoria final da construtora.',
+      'A Limpeza Técnica remove esse acúmulo sem danificar telhas, calhas ou rufos, deixando a cobertura pronta para a vistoria final da construtora.',
     ],
     benefits: [
       'Remoção de resíduos de obra em telhas, calhas e rufos',
@@ -61,24 +80,6 @@ export const services = [
     ],
     imageLabel: '[ Foto: Hidrolavagem de Fachadas ]',
     image: cardHidrolavagem,
-  },
-  {
-    slug: 'limpeza-vidros',
-    icon: Sparkles,
-    title: 'Limpeza de Vidros',
-    shortDescription: 'Vidros, janelas e caixilhos impecáveis, sem marcas de cimento ou selante.',
-    description: [
-      'Vidros e esquadrias exigem cuidado técnico redobrado após a obra: respingos de cimento, tinta e selante costumam grudar na superfície e, se removidos com produtos inadequados, podem riscar ou manchar permanentemente o material.',
-      'A Limpeza Técnica LTD utiliza técnicas e produtos específicos para remover esses resíduos sem danificar vidros, caixilhos de alumínio ou esquadrias de PVC.',
-    ],
-    benefits: [
-      'Remoção de cimento, selante e tinta sem riscar o vidro',
-      'Técnica adequada para caixilhos de alumínio e PVC',
-      'Acabamento sem manchas e sem marcas de secagem',
-      'Atendimento a construtoras e incorporadoras em todo o RS',
-    ],
-    imageLabel: '[ Foto: Limpeza de Vidros ]',
-    image: cardVidro,
   },
 ]
 

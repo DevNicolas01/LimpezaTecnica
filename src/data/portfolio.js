@@ -1,4 +1,4 @@
-// TODO: Substituir pelos projetos reais executados pela Limpeza Técnica LTD.
+// TODO: Substituir pelos projetos reais executados pela Limpeza Técnica.
 export const portfolio = [
   {
     responsible: 'Carlos Henrique M.',
@@ -16,7 +16,7 @@ export const portfolio = [
       'Limpeza técnica de vidros e revestimentos em ACM em obra comercial de Caxias do Sul.',
     category: 'Limpeza de Vidros',
     city: 'Caxias do Sul',
-    serviceSlug: 'limpeza-vidros',
+    serviceSlug: 'limpeza-fachadas',
   },
   {
     responsible: 'Roberto S.',

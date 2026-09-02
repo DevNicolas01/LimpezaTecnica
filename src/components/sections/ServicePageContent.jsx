@@ -56,7 +56,7 @@ export default function ServicePageContent({ service }) {
             <ul className="space-y-3">
               {benefits.map((benefit) => (
                 <li key={benefit} className="flex items-start gap-3">
-                  <CheckCircle2 size={20} className="text-action shrink-0 mt-0.5" />
+                  <CheckCircle2 size={20} className="text-whatsapp shrink-0 mt-0.5" />
                   <span className="text-gray-700">{benefit}</span>
                 </li>
               ))}

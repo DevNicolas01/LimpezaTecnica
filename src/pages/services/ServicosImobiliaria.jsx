@@ -1,6 +1,6 @@
 import ServicePageContent from '../../components/sections/ServicePageContent'
 import { getServiceBySlug } from '../../data/services'
 
-export default function LimpezaVidros() {
-  return <ServicePageContent service={getServiceBySlug('limpeza-vidros')} />
+export default function ServicosImobiliaria() {
+  return <ServicePageContent service={getServiceBySlug('servicos-imobiliaria')} />
 }

@@ -26,7 +26,7 @@ export default function Home() {
       <ServiceHighlight
         badge="✦ Especialistas Nº1 em Limpeza Pós-Obra"
         title="Prazo cumprido, resultado aprovado em vistoria"
-        paragraph="Sabemos que atraso na limpeza pode comprometer a entrega da obra e prejudicar contratos com a construtora — por isso a Limpeza Técnica LTD garante equipe disponível, prazo cumprido e resultado aprovado em vistoria, removendo respingos de tinta, manchas de cimento e resíduos de construção em todas as superfícies do imóvel antes da entrega ao cliente final."
+        paragraph="Sabemos que atraso na limpeza pode comprometer a entrega da obra e prejudicar contratos com a construtora — por isso a Limpeza Técnica garante equipe disponível, prazo cumprido e resultado aprovado em vistoria, removendo respingos de tinta, manchas de cimento e resíduos de construção em todas as superfícies do imóvel antes da entrega ao cliente final."
         flip={false}
         offset="translate-x-4 translate-y-4"
         watermarkSide="left"
@@ -40,7 +40,7 @@ export default function Home() {
       <ServiceHighlight
         badge="✦ Qualidade Comprovada no RS"
         title="Anos entregando obras limpas no Rio Grande do Sul"
-        paragraph="Engenheiros e arquitetos que já trabalharam com a gente sabem: a Limpeza Técnica LTD entrega padrão técnico superior, removendo até as manchas mais difíceis — cimento, selante, tinta — sem danificar revestimentos, vidros ou esquadrias, com produtos adequados a cada tipo de material e capacidade para atender grandes volumes dentro do prazo combinado com a construtora."
+        paragraph="Engenheiros e arquitetos que já trabalharam com a gente sabem: a Limpeza Técnica entrega padrão técnico superior, removendo até as manchas mais difíceis — cimento, selante, tinta — sem danificar revestimentos, vidros ou esquadrias, com produtos adequados a cada tipo de material e capacidade para atender grandes volumes dentro do prazo combinado com a construtora."
         flip={false}
         offset="translate-x-4 translate-y-4"
         watermarkSide="left"

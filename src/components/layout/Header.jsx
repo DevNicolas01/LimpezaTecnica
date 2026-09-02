@@ -5,6 +5,7 @@ import { Menu, X, ChevronDown, ArrowRight, Phone } from 'lucide-react'
 import { services } from '../../data/services'
 import { CONTACT, WHATSAPP_LINK } from '../../data/constants'
 import logo from '../../assets/logo2.png'
+import logoIcon from '../../assets/logo3.png'
 
 const LOGO_ZONE_WIDTH = 250
 
@@ -186,7 +187,7 @@ export default function Header() {
 
         <div className="flex xl:hidden items-center justify-between bg-[#1B2A4A] px-4" style={{ height: '64px' }}>
           <Link to="/" className="flex items-center gap-2">
-            <img src={logo} alt="Limpeza Técnica" className="h-11 w-11 shrink-0 object-contain rounded-lg bg-white p-1.5" />
+            <img src={logoIcon} alt="Limpeza Técnica" className="h-14 w-14 shrink-0 object-contain rounded-lg bg-white p-1.5" />
             <span className="font-extrabold text-white text-sm">Limpeza Técnica</span>
           </Link>
           <button className="text-white" onClick={() => setMobileOpen((o) => !o)} aria-label="Abrir menu">
