@@ -146,7 +146,9 @@ export default function Footer() {
       <div className="border-t border-white/10 relative">
         <div className="container-limpa py-6 flex flex-col sm:flex-row items-center justify-between gap-2 text-white/50 text-sm">
           <span>Powered by Arrow Shot</span>
-          <span>Copyright {year} Limpeza Técnica</span>
+          <span>
+            Copyright {year} Limpeza Técnica — CNPJ {CONTACT.cnpj}
+          </span>
         </div>
       </div>
     </footer>
