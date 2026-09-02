@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime-Cltr0gcK.js";import{c as t}from"./index-DqhYD4-0.js";import{t as n}from"./ServicePageContent-NM_wxVne.js";var r=e();function i(){return(0,r.jsx)(n,{service:t(`hidrolavagem`)})}export{i as default};
