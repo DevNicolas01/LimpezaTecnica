@@ -11,7 +11,7 @@ const INSTAGRAM_PATH =
 
 const FOOTER_SERVICES = [
   { label: 'Limpeza Pós-Obra', slug: 'limpeza-fachadas' },
-  { label: 'Serviços de Imobiliária', slug: 'servicos-imobiliaria' },
+  { label: 'Serviços para Imobiliárias', slug: 'servicos-imobiliaria' },
   { label: 'Limpeza de Coberturas', slug: 'lavagem-coberturas' },
   { label: 'Hidrolavagem de Fachadas', slug: 'hidrolavagem' },
   { label: 'Limpeza de Pisos' },

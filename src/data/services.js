@@ -27,7 +27,7 @@ export const services = [
   {
     slug: 'servicos-imobiliaria',
     icon: Home,
-    title: 'Serviços de Imobiliária',
+    title: 'Serviços para Imobiliárias',
     shortDescription:
       'Limpeza técnica para imobiliárias: vitrines, escritórios e imóveis prontos para visita.',
     description: [
@@ -40,7 +40,7 @@ export const services = [
       'Atendimento a imóveis residenciais e comerciais',
       'Agendamento flexível conforme a agenda de visitas',
     ],
-    imageLabel: '[ Foto: Serviços de Imobiliária ]',
+    imageLabel: '[ Foto: Serviços para Imobiliárias ]',
     image: cardImobiliaria,
   },
   {
